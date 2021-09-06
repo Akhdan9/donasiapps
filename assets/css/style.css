@@ -1,0 +1,73 @@
+li.nav-item a.nav-link {
+    color: white !important;
+}
+
+.bg-custom-primary {
+    background-color: #0166DB;
+}
+
+
+/**css default**/
+
+.push-from-top {
+    margin-top: 20px;
+}
+
+
+/**end css default**/
+
+#item-box {
+    padding: 100px 0 0 0;
+    color: #444;
+}
+
+#slide-content {
+    border: 1px solid red;
+    margin: 50px 0 20px 0;
+}
+
+.xzoom-source img,
+.xzoom-preview img,
+.xzoom-lens img {
+    display: block;
+    max-width: none;
+    max-height: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.xzoom-thumbs {
+    float: left;
+    border: 1px solid red;
+}
+
+.footer {
+    background-color: #0166DB;
+    text-align: center;
+}
+
+.footer>.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+/**
+custom card box post content
+**/
+
+#box-card-title {
+    min-height: 130px;
+}
+
+h3.custom-card-title {
+    color: #444444;
+    word-break: normal;
+    font-weight: bold;
+}
+
+h3:hover {
+    color: #0166DB;
+}
