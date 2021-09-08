@@ -34,7 +34,7 @@
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-  <a class="nav-link" href="<?php echo BASE_URL_ADMIN ?>?page=slider">
+  <a class="nav-link" href="?page=slider">
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Slider</span></a>
 </li>
@@ -46,8 +46,8 @@
   </a>
   <div id="post" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-      <a class="collapse-item" href="buttons.html">List Post</a>
-      <a class="collapse-item" href="cards.html">Tambah Post</a>
+      <a class="collapse-item" href="<?php echo BASE_URL_ADMIN ?>?page=posts">List Post</a>
+      <a class="collapse-item" href="<?php echo BASE_URL_ADMIN ?>?page=addPost">Tambah Post</a>
     </div>
   </div>
 </li>
@@ -60,8 +60,8 @@
   </a>
   <div id="kategori" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-      <a class="collapse-item" href="buttons.html">List Kategori</a>
-      <a class="collapse-item" href="cards.html">Tambah Kategori</a>
+      <a class="collapse-item" href="<?php echo BASE_URL_ADMIN ?>?page=kategori">List Kategori</a>
+      <a class="collapse-item" href="<?php echo BASE_URL_ADMIN ?>?page=addKategori">Tambah Kategori</a>
     </div>
   </div>
 </li>
@@ -73,8 +73,8 @@
   </a>
   <div id="user" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-      <a class="collapse-item" href="buttons.html">List User</a>
-      <a class="collapse-item" href="cards.html">Tambah User</a>
+      <a class="collapse-item" href="<?php echo BASE_URL_ADMIN ?>?page=users">List User</a>
+      <a class="collapse-item" href="<?php echo BASE_URL_ADMIN ?>?page=addUsers">Tambah User</a>
     </div>
   </div>
 </li>
@@ -88,9 +88,16 @@
   </div>
 
   <li class="nav-item">
-  <a class="nav-link" href="index.html">
-    <i class="fas fa-fw fa-tachometer-alt"></i>
-    <span>Payments</span></a>
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseTwo">
+    <i class="fas fa-fw fa-cog"></i>
+    <span>Payments</span>
+  </a>
+  <div id="payment" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <a class="collapse-item" href="<?php echo BASE_URL_ADMIN ?>?page=payment">List Payment</a>
+      <a class="collapse-item" href="<?php echo BASE_URL_ADMIN ?>?page=pending">Pending Payment</a>
+    </div>
+  </div>
 </li>
 
 

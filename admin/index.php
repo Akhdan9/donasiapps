@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+include '../includes/db.php';
 include '../includes/config.php';
 include 'includes/header.php';
 
@@ -35,7 +37,64 @@ include 'includes/header.php';
               include 'page/slider/slide.php';
               break;
 
+            case 'posts': 
+              include 'page/posts/posts.php';
+              break;
+
+            case 'addPost': 
+              include 'page/posts/addPost.php';
+              break;
+
+            case 'editPost': 
+              include 'page/posts/editPost.php';
+              break;
+
+            case 'detailPost': 
+              include 'page/posts/detailPost.php';
+              break;
               
+            case 'kategori': 
+              include 'page/kategori/kategori.php';
+              break;
+
+            case 'addKategori': 
+              include 'page/kategori/addKategori.php';
+              break;
+
+            case 'editKategori': 
+              include 'page/kategori/editKategori.php';
+              break;
+
+            case 'users': 
+                include 'page/users/users.php';
+                break;
+
+            case 'addUsers': 
+              include 'page/users/addUsers.php';
+              break;
+              
+            case 'editUsers': 
+              include 'page/users/editUsers.php';
+              break;
+
+            case 'detailUsers': 
+            include 'page/users/detailUsers.php';
+            break;
+            
+            case 'payment': 
+              include 'page/payment/payment.php';
+              break;
+
+            case 'pending': 
+              include 'page/payment/pending.php';
+              break;
+            
+            case 'detailPayment': 
+              include 'page/payment/detailPayment.php';
+              break;
+            
+
+
             default : 
             include 'page/dashboard.php';
             break;
