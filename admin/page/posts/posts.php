@@ -14,17 +14,32 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                        $query = mysqli_query($connection, "SELECT * FROM posts");
+                        while($row = mysqli_fetch_array($query)){
+
+                    ?>
                     <tr>
-                        <td>Title 1</td>
-                        <td>10-10-2121</td>
+                        <td><?php echo $row['post_title']?></td>
+                        <td><?php echo $row['post_date']?></td>
                         <td>
-                            <a href="?page=editPost" class="btn btn-warning">Edit</a>
-                            <a href="#" class="btn btn-danger">Delete</a>
-                            <a href="?page=detailPost" class="btn btn-info">Detail</a>
+                            <a href="?page=editPost&pid=<?php echo $row['id_post'] ?>" class="btn btn-warning">Edit</a>
+                            <a href="?page=posts&delete=<?php echo $row['id_post'] ?>" class="btn btn-danger">Delete</a>
+                            <a href="?page=detailPost&detail=<?php echo $row['id_post'] ?>" class="btn btn-info">Detail</a>
                         </td>
                     </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
+<?php
+
+if(isset($_GET['delete'])){
+    $pid = $_GET['delete'];
+    $query = mysqli_query($connection, "DELETE FROM posts WHERE id_post = '$pid'");
+}
+
+?>

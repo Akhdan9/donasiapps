@@ -1,3 +1,18 @@
+<?php
+
+if(isset($_POST['simpan'])){
+    $kategori = $_POST['nama_kat'];
+    $query = "INSERT INTO kategori(nama_kat) VALUES('$kategori')";
+    $result = mysqli_query($connection, $query);
+    if($result){
+        echo "sukses";
+    } else {
+        echo "gagal";
+    }
+}
+
+?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -10,14 +25,14 @@
             <div class="card border-0 shadow-lg">
                 <div class="card-body">
                     <a href="" class="btn btn-secondary">Kembali</a>
-                    <form action="">
+                    <form method="post">
                         <div class="form-group">
                             <label for="">Nama Kategori</label>
-                            <input type="text" class="form-control" name="">
+                            <input type="text" class="form-control" name="nama_kat">
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-primary btn-block">Simpan</button>
+                            <button class="btn btn-primary btn-block" name="simpan" type="submit">Simpan</button>
                         </div>
                     </form>
                 </div>

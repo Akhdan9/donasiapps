@@ -16,20 +16,27 @@
                             <thead>
                                 <tr>
                                     <th>Nama</th>
+                                    <th>Phone</th>
                                     <th>Email</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                    $query = mysqli_query($connection, "SELECT * FROM users");
+                                    while($row = mysqli_fetch_array($query)){
+                                ?>
                                 <tr>
-                                    <td>lorem</td>
-                                    <td>Lorem</td>
+                                    <td><?php echo $row['fullname'] ?></td>
+                                    <td><?php echo $row['phone'] ?></td>
+                                    <td><?php echo $row['email'] ?></td>
                                     <td>
-                                        <a href="?page=editUsers" class="btn btn-warning">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
-                                        <a href="?page=detailUsers" class="btn btn-info">Detail</a>
+                                        <a href="?page=editUsers&edit=<?php echo $row['id_user'] ?>" class="btn btn-warning">Edit</a>
+                                        <a href="?page=users&delete=<?Php echo $row['id_user'] ?>" class="btn btn-danger">Delete</a>
+                                        <a href="?page=detailUsers&detail=<?php echo $row['id_user'] ?>" class="btn btn-info">Detail</a>
                                     </td>
                                 </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -38,3 +45,12 @@
         </div>
     </div>
 </div>
+
+<?php 
+
+if(isset($_GET['delete'])){
+    $uid = $_GET['delete'];
+    $query = mysqli_query($connection, "DELETE FROM users WHERE id_user='$uid'");
+}
+
+?>

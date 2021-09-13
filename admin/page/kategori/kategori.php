@@ -18,13 +18,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                        $query = mysqli_query($connection, "SELECT * FROM kategori");
+                                        while($row = mysqli_fetch_array($query)){
+                                    ?>
                                 <tr>
-                                    <td>Bencana Alam</td>
+                                    <td><?php echo $row['nama_kat'] ?></td>
                                     <td>
-                                        <a href="?page=editKategori" class="btn btn-warning">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <a href="?page=editKategori&kid=<?php echo $row['id_kategori'] ?>" class="btn btn-warning">Edit</a>
+                                        <a href="?page=kategori&delete=<?php echo $row['id_kategori'] ?>" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -33,3 +38,12 @@
         </div>
     </div>
 </div>
+
+<?php
+
+if(isset($_GET['delete'])){
+    $kid = $_GET['delete'];
+    $query = mysqli_query($connection, "DELETE FROM kategori WHERE id_kategori = '$kid'");
+}
+
+?>

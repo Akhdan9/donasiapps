@@ -37,6 +37,10 @@ include 'includes/header.php';
               include 'page/slider/slide.php';
               break;
 
+            case 'editSlide': 
+            include 'page/slider/editSlide.php';
+            break;
+
             case 'posts': 
               include 'page/posts/posts.php';
               break;
